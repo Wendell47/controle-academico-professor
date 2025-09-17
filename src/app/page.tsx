@@ -3,7 +3,7 @@ import Footer from "./components/footer";
 import Input from "./components/input";
 import Container from "./components/Container";
 import Link from "next/link";
-import Button from "./components/button";
+import { Button } from "./components/button";
 
 export default function Home() {
 	return (

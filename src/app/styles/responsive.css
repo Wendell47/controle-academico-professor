@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.menu-mobile {
+	@apply fixed inset-0;
+}

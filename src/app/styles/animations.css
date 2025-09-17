@@ -1,0 +1,50 @@
+/* Animação de Fechar */
+.close {
+	animation: close-animation 1s ease-in-out 0s 1 forwards; /* Ajuste a duração, timing e iterações conforme necessário */
+}
+
+@keyframes close-animation {
+	0% {
+		transform: translateX(0); /* Posição inicial: menu visível */
+		width: auto; /* Largura automática (baseada no conteúdo) */
+	}
+	100% {
+		transform: translateX(-100%); /* Move o menu completamente para fora da tela (à esquerda) */
+		width: 0; /* Define a largura para zero, escondendo-o */
+	}
+}
+
+/* Animação de Abrir */
+.open {
+	animation: open-animation 1s ease-in-out 0s 1 forwards; /* Ajuste a duração, timing e iterações conforme necessário */
+}
+
+@keyframes open-animation {
+	0% {
+		transform: translateX(-100%); /* Posição inicial: menu escondido */
+		width: 0; /* Largura inicial: zero */
+	}
+	100% {
+		transform: translateX(0); /* Move o menu para a posição original (visível) */
+		width: auto; /* Largura automática (baseada no conteúdo) */
+	}
+}
+
+/* Adicione classes para controlar a animação */
+.menu-container {
+	position: absolute; /* ou fixed, dependendo do seu layout */
+	left: 0;
+	width: 300px; /* Defina uma largura inicial (opcional) */
+	transition:
+		transform 0.5s ease-in-out,
+		width 0.5s ease-in-out; /* Transição suave para a animação */
+}
+
+/* Classes para acionar a animação */
+.menu-container.open {
+	animation: open-animation;
+}
+
+.menu-container.close {
+	animation: close-animation;
+}

@@ -12,10 +12,12 @@
     "controle-academico-professor": "file:",
     "lucide-react": "^0.507.0",
     "next": "15.3.1",
+    "radix-ui": "^1.4.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.0.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

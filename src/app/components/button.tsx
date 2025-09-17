@@ -1,15 +1,48 @@
-type Props = React.ComponentProps<"button"> & {
-	title: string;
+import Link from "next/link";
+import type { ComponentProps, PropsWithChildren, ReactNode } from "react";
+import "@/app/styles/buttonsStyle.css";
+
+type Props = ComponentProps<"button"> & {
+	title?: string;
+	icon?: ReactNode;
+	styleType?: "primary" | "simple";
+};
+type linkProps = PropsWithChildren & {
+	link: string;
+	title?: string;
+	icon?: ReactNode;
+	className?: string;
+};
+const LinkButton = ({ link, title, children, className, icon }: linkProps) => {
+	return (
+		<Link
+			href={link}
+			className={`p-2 inline-flex w-full items-center  gap-3 rounded-xl ${!children ? "hover:bg-white" : ""} hover:text-black transition-discrete ${className}`}
+		>
+			{icon}
+			<span className="text-nowrap">{title}</span>
+			{children}
+		</Link>
+	);
 };
 
-export default function Button({ title, ...rest }: Props) {
+function Button({
+	title,
+	icon,
+	styleType = "primary",
+	className,
+	...rest
+}: Props) {
 	return (
 		<button
-			className="bg-green-500 text-white font-bold py-3 px-4 rounded-md hover:bg-green-600 shadow-xl drop-shadow-blue-900 transition duration-300 ease-in-out w-full focus:outline-none focus:ring-3 focus:ring-green-500/50"
+			className={`base ${styleType} ${className}`}
 			type="button"
 			{...rest}
 		>
+			{icon}
 			{title}
 		</button>
 	);
 }
+
+export { LinkButton, Button };
