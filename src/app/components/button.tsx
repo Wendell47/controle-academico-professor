@@ -17,7 +17,7 @@ const LinkButton = ({ link, title, children, className, icon }: linkProps) => {
 	return (
 		<Link
 			href={link}
-			className={`p-2 inline-flex w-full items-center  gap-3 rounded-xl ${!children ? "hover:bg-white" : ""} hover:text-black transition-discrete ${className}`}
+			className={`p-2 inline-flex w-full items-center  gap-4 rounded-xl ${!children ? "hover:bg-white hover:text-[#0d52b8] " : ""} hover:text-black transition-discrete ${className}`}
 		>
 			{icon}
 			<span className="text-nowrap">{title}</span>

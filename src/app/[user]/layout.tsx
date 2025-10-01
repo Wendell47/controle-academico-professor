@@ -8,7 +8,6 @@ export default function Layout({ children }: props) {
 		<div className="flex flex-1 ">
 			<AsideMenu />
 			<main className="flex flex-col flex-2  h-screen overflow-hidden">
-				<Header />
 				{children}
 			</main>
 		</div>

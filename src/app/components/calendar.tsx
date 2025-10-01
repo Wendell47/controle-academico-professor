@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Card from "./card";
 
 const MiniCalendar = () => {
 	const today = new Date();
@@ -34,9 +35,14 @@ const MiniCalendar = () => {
 		days.push({ day: i, current: false });
 	}
 
+	// Get today's day, month, year
+	const todayDay = today.getDate();
+	const todayMonth = today.getMonth();
+	const todayYear = today.getFullYear();
+
 	return (
-		<div className="w-full flex flex-col flex-1 rounded-lg font-sans bg-white">
-			<div className="text-center font-bold mb-2 text-2xl">
+		<Card className="w-full flex flex-col flex-1 rounded-lg font-sans bg-white border border-neutral-100 ">
+			<div className="text-center font-bold mb-6 text-2xl">
 				{currentDate.toLocaleString("default", { month: "long" })} {year}
 			</div>
 			<div className="grid grid-cols-7 gap-1 flex-1">
@@ -45,18 +51,26 @@ const MiniCalendar = () => {
 						{d}
 					</div>
 				))}
-				{days.map((item, i) => (
-					<div
-						key={i}
-						className={`h-8 flex items-center justify-center rounded 
-							${item.current ? " text-neutral-900 font-semibold" : "text-gray-400"}
-						`}
-					>
-						{item.day}
-					</div>
-				))}
+				{days.map((item, i) => {
+					const isToday =
+						item.current &&
+						item.day === todayDay &&
+						month === todayMonth &&
+						year === todayYear;
+					return (
+						<div
+							key={i}
+							className={`h-10  flex items-center justify-center rounded-full
+								${item.current ? "text-neutral-900 font-semibold" : "text-gray-400"}
+								${isToday ? "bg-[#0d52b8] text-white" : ""}
+							`}
+						>
+							{item.day}
+						</div>
+					);
+				})}
 			</div>
-		</div>
+		</Card>
 	);
 };
 

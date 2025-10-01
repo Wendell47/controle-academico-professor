@@ -20,36 +20,54 @@ export default function AsideMenu({ ...rest }: props) {
 		{
 			group: "Home",
 			items: [
-				{ title: "Visão Geral", icon: <LayoutDashboard size={iconSize} /> },
-				{ title: "Biblioteca", icon: <BookOpen size={iconSize} /> },
+				{
+					title: "Visão Geral",
+					icon: <LayoutDashboard size={iconSize} className="opacity-80" />,
+				},
+				{
+					title: "Biblioteca",
+					icon: <BookOpen size={iconSize} className="opacity-80" />,
+				},
 			],
 		},
 		{
 			group: "Administrativo",
 			items: [
-				{ title: "Administrativo", icon: <Notebook size={iconSize} /> },
+				{
+					title: "Administrativo",
+					icon: <Notebook size={iconSize} className="opacity-80" />,
+				},
 				{
 					title: "Processos Administrativo",
-					icon: <Library size={iconSize} />,
+					icon: <Library size={iconSize} className="opacity-80" />,
 				},
 			],
 		},
 		{
 			group: "Outros",
 			items: [
-				{ title: "Diretoria", icon: <LayoutDashboard size={iconSize} /> },
-				{ title: "Coordenação de cursos", icon: <BookOpen size={iconSize} /> },
-				{ title: "Coordenação de estágios", icon: <Library size={iconSize} /> },
+				{
+					title: "Diretoria",
+					icon: <LayoutDashboard size={iconSize} className="opacity-80" />,
+				},
+				{
+					title: "Coordenação de cursos",
+					icon: <BookOpen size={iconSize} className="opacity-80" />,
+				},
+				{
+					title: "Coordenação de estágios",
+					icon: <Library size={iconSize} className="opacity-80" />,
+				},
 				{
 					title: "Processos Administrativo",
-					icon: <LayoutDashboard size={iconSize} />,
+					icon: <LayoutDashboard size={iconSize} className="opacity-80" />,
 				},
 			],
 		},
 	];
 	return (
 		<aside
-			className={`p-5 bg-cover  text-white transition-all w-auto overflow-hidden max-md:menu-mobile `}
+			className={`p-5 bg-cover  text-white transition-all w-auto overflow-hidden max-md:menu-mobile  bg-[#0d52b8]`}
 			{...rest}
 			style={{
 				backgroundImage: "url(/bg-login.webp)",
