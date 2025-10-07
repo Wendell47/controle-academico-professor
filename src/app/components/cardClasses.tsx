@@ -45,7 +45,7 @@ export default function CardClasses() {
 			<ul className=" text-sm">
 				{cursos.map((curso, idx) => (
 					<li key={curso.nome + idx} className="flex flex-col">
-						<div className="font-bold text-neutral-800 flex gap-3 items-center py-4">
+						<div className="font-bold text-neutral-800 dark:text-neutral-200 flex gap-3 items-center py-4">
 							<ChevronDown />
 							{curso.nome}
 						</div>
@@ -54,14 +54,14 @@ export default function CardClasses() {
 								{curso.disciplinas.map((disciplina, dIdx) => (
 									<li
 										key={disciplina.codigo + dIdx}
-										className="flex justify-between items-center gap-5 p-3 hover:bg-neutral-100 rounded-2xl"
+										className="flex justify-between items-center gap-5 p-3 hover:bg-neutral-100 dark:hover:bg-slate-700 rounded-2xl"
 									>
 										<div className="flex flex-1 items-center justify-center gap-5">
 											<span className="text-[10px] bg-[#0d52b8] p-1 px-2 rounded-xl text-white">
 												{disciplina.codigo}
 											</span>
 											<div className="flex-1">
-												<p className="text-gray-800 overflow-ellipsis text-nowrap overflow-hidden ">
+												<p className="text-gray-800 dark:text-neutral-300 overflow-ellipsis text-nowrap overflow-hidden ">
 													{disciplina.nome}
 												</p>
 											</div>
@@ -97,7 +97,7 @@ export default function CardClasses() {
 	}
 
 	return (
-		<Card className=" border border-neutral-100 ">
+		<Card>
 			{cursosManaus.map((curso) => (
 				<div key={curso.cidade} className="text-sm">
 					<div className=" border-neutral-200 pb-4 flex justify-between items-center">

@@ -41,7 +41,7 @@ const MiniCalendar = () => {
 	const todayYear = today.getFullYear();
 
 	return (
-		<Card className="w-full flex flex-col flex-1 rounded-lg font-sans bg-white border border-neutral-100 ">
+		<Card className="w-full flex flex-col flex-1 font-sans ">
 			<div className="text-center font-bold mb-6 text-2xl">
 				{currentDate.toLocaleString("default", { month: "long" })} {year}
 			</div>
