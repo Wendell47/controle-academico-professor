@@ -61,8 +61,8 @@ const MiniCalendar = () => {
 						<div
 							key={i}
 							className={`h-10  flex items-center justify-center rounded-full
-								${item.current ? "text-neutral-900 font-semibold" : "text-gray-400"}
-								${isToday ? "bg-[#0d52b8] text-white" : ""}
+								${item.current ? "text-neutral-900 font-semibold dark:text-gray-200" : "text-red-600 dark:text-red-800"}
+								${isToday ? "bg-[#0d52b8] !text-white" : ""}
 							`}
 						>
 							{item.day}

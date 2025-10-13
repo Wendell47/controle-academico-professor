@@ -1,10 +1,12 @@
 import { Search } from "lucide-react";
 import Input from "./input";
-import { Avatar } from "radix-ui";
 
-export default function Header() {
+type props = { classname?: string };
+export default function Header({ classname }: props) {
 	return (
-		<div className=" dark:bg-transparent !flex-3/4 dark:border-none sticky top-0">
+		<div
+			className={` dark:bg-transparent !flex-3/4 dark:border-none sticky top-0 ${classname}`}
+		>
 			<nav className=" py-4 flex items-center justify-between">
 				<div>
 					<h2 className="font-bold text-1xl">SISTEMA DE CONTROLE ACADÊMICO </h2>

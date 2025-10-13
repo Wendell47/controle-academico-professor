@@ -1,5 +1,6 @@
 import { ChevronDown, ChevronRight } from "lucide-react";
 import Card from "./card";
+import { title } from "process";
 
 export default function CardClasses() {
 	type props = {
@@ -96,6 +97,18 @@ export default function CardClasses() {
 		);
 	}
 
+	const Option = ({
+		item,
+		title,
+	}: {
+		item: string;
+		title: "local" | "turno";
+	}) => (
+		<p className="  text-gray-500 dark:text-gray-300 px-3 py-1 rounded-2xl bg-neutral-100 dark:bg-gray-800">
+			{title}:{" "}
+			<span className="font-bold text-gray-900 dark:text-white">{item}</span>
+		</p>
+	);
 	return (
 		<Card>
 			{cursosManaus.map((curso) => (
@@ -103,14 +116,8 @@ export default function CardClasses() {
 					<div className=" border-neutral-200 pb-4 flex justify-between items-center">
 						<p className="font-bold text-xl">Turmas</p>
 						<div className="flex gap-4">
-							<p className="  text-gray-500 px-3 py-1 rounded-2xl bg-neutral-100">
-								local:{" "}
-								<span className="font-bold text-gray-900">{curso.cidade}</span>
-							</p>
-							<p className="ml-2  text-gray-500 px-3 py-1 rounded-2xl bg-neutral-100">
-								turno:{" "}
-								<span className="font-bold text-gray-900">{curso.turno}</span>
-							</p>
+							<Option title="local" item={curso.cidade} />
+							<Option title="turno" item={curso.turno} />
 						</div>
 					</div>
 					{renderDisciplinas(curso.cursos)}
