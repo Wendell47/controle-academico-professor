@@ -42,13 +42,13 @@ export default function Input({
 				</label>
 			)}
 			<div
-				className={`flex gap-2 p-3 items-center ${inputStyle === "primary" ? "bg-white" : "bg-gray-100"} rounded-xl transition duration-300 ease-in-out focus-within:ring-blue-500/50 focus-within:ring-3`}
+				className={`flex gap-2 p-3 items-center ${inputStyle === "primary" ? "bg-white dark:bg-transparent" : "bg-gray-100"} rounded-xl transition duration-300 ease-in-out focus-within:ring-blue-500/50 focus-within:ring-3`}
 			>
 				<Icons type={type} />
 				{icon}
 				<input
 					id={label}
-					className=" placeholder:text-neutral-500 text-neutral-700 border-gray-300 rounded-md w-full outline-none"
+					className=" placeholder:text-neutral-500 dark:placeholder:text-gray-500 text-neutral-700 border-gray-300 rounded-md w-full outline-none"
 					placeholder={placeholder}
 					type={type}
 					{...rest}

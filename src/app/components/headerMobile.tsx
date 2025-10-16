@@ -6,19 +6,23 @@ import { useMenuStore } from "../stores/useMenuStore";
 
 type props = { classname?: string };
 export default function HeaderMobile({ classname }: props) {
-	const { toggleMenu, toggleMainMenu } = useMenuStore();
+	const { toggleMenu, closeMenu, closeMainMenu, toggleMainMenu } =
+		useMenuStore();
 
 	return (
 		<div
-			className={`min-lg:hidden dark:bg-transparent z-20 bg-white border-b border-gray-100 px-10 dark:border-none sticky top-0 ${classname}`}
+			className={`min-lg:hidden  z-20 bg-white dark:bg-[#36393d] backdrop-blur-3xl border-b border-gray-100 dark:border-[#2b2d30] sticky top-0 ${classname}`}
 		>
-			<nav className=" py-4 flex items-center justify-between">
+			<nav className=" py-4 flex items-center justify-between w-full">
 				<Button
 					styleType="simple"
 					icon={
 						<Menu
-							className="dark:text-white text-gray-600"
-							onClick={() => toggleMainMenu()}
+							className="dark:text-gray-500 text-gray-600"
+							onClick={() => {
+								toggleMainMenu();
+								closeMenu();
+							}}
 						/>
 					}
 				/>
@@ -33,8 +37,11 @@ export default function HeaderMobile({ classname }: props) {
 					styleType="simple"
 					icon={
 						<ArrowLeftFromLine
-							className="dark:text-white text-gray-600"
-							onClick={() => toggleMenu()}
+							className="dark:text-gray-500 text-gray-600"
+							onClick={() => {
+								toggleMenu();
+								closeMainMenu();
+							}}
 						/>
 					}
 				/>

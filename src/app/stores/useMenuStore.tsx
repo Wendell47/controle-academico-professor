@@ -6,6 +6,7 @@ type MenuState = {
 	toggleMenu: () => void;
 	toggleMainMenu: () => void;
 	closeMenu: () => void;
+	closeMainMenu: () => void;
 };
 
 export const useMenuStore = create<MenuState>((set) => ({
@@ -14,4 +15,5 @@ export const useMenuStore = create<MenuState>((set) => ({
 	toggleMenu: () => set((state) => ({ isOpen: !state.isOpen })),
 	toggleMainMenu: () => set((state) => ({ mainMenu: !state.mainMenu })),
 	closeMenu: () => set({ isOpen: false }),
+	closeMainMenu: () => set({ mainMenu: false }),
 }));

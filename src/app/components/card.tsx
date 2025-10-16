@@ -7,7 +7,7 @@ export default function Card({
 }: PropsWithChildren & ComponentProps<"div">) {
 	return (
 		<div
-			className={`p-6   dark:border dark:border-gray-800/30 rounded-2xl dark:bg-gray-800/50 bg-white shadow-2xl shadow-neutral-100 dark:shadow-none ${className}`}
+			className={`p-6   dark:border dark:border-[#2b2d30] rounded-2xl dark:bg-[#36393d] bg-white  dark:shadow-none ${className}`}
 			{...rest}
 		>
 			{children}

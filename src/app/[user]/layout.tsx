@@ -7,13 +7,13 @@ import HeaderMobile from "../components/headerMobile";
 type props = PropsWithChildren;
 export default function Layout({ children }: props) {
 	return (
-		<div className="h-screen overflow-hidden w-full">
-			<HeaderMobile />
-			<div className="flex h-full flex-1">
+		<main className="h-screen overflow-hidden w-full grid  grid-rows-1">
+			<div className="flex  max-lg:flex-col ">
+				<HeaderMobile />
 				<AsideMenu />
-				<main className="flex  flex-col flex-3/4  ">{children}</main>
+				{children}
 				<MenuTeacher />
 			</div>
-		</div>
+		</main>
 	);
 }

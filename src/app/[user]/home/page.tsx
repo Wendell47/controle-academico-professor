@@ -1,3 +1,4 @@
+import { Button } from "@/app/components/button";
 import MiniCalendar from "@/app/components/calendar";
 import Card from "@/app/components/card";
 import CardClasses from "@/app/components/cardClasses";
@@ -11,6 +12,8 @@ import {
 	BookUp,
 	BrainCircuit,
 	Calendar,
+	ChevronLeft,
+	ChevronRight,
 	EllipsisVertical,
 	LampFloor,
 	PersonStanding,
@@ -21,10 +24,10 @@ import { Avatar, ScrollArea } from "radix-ui";
 
 export default function Home() {
 	return (
-		<div className="flex flex-1 flex-col gap-6  overflow-auto ">
-			<div className="flex flex-1 max-md:flex-col px-10 gap-10 overflow-auto  justify-between">
-				<div className=" flex flex-wrap gap-6  flex-1/4 [&>div]:flex-2/4 min-2xl:[&>div]:flex-1/4 py-4 max-w-5xl min-lg:max-w-6xl mx-auto">
-					<Header classname="max-lg:hidden" />
+		<div className="flex flex-1 flex-col gap-6  overflow-auto  px-4 max-w-5xl min-lg:max-w-6xl mx-auto max-h-[1200]">
+			<Header classname="max-lg:hidden pt-10" />
+			<ScrollContainer classname="flex-1 [&>div]:h-full" paddingViewport={true}>
+				<div className=" flex flex-wrap gap-4  h-full flex-1 [&>div]:flex-1/4 max-2xl:[&>div]:flex-[47%]">
 					<CardMenu
 						title="Menu de turma "
 						icon={<PersonStanding size={40} />}
@@ -50,9 +53,36 @@ export default function Home() {
 						title="Coordenação de Estágios "
 						icon={<UserSearch size={40} />}
 					/>
-					<Card className="!flex-3/4 min-h-2/6" />
+					<Card className="!flex-3/4 min-h-2/6">
+						<div className="mb-5 border-b border-gray-100 dark:border-[#3f444b] pb-4 flex justify-between items-center">
+							<span className="font-bold text-gray-600 dark:text-gray-400">
+								Avisos
+							</span>
+							<div className="flex gap-4 border border-gray-100 dark:border-[#3f444b] rounded-2xl p-1 [&>svg]:cursor-pointer">
+								<Button
+									icon={<ChevronLeft />}
+									styleType="simple"
+									className="!p-2 !text-black dark:!text-gray-500"
+								/>
+								<Button
+									icon={<ChevronRight />}
+									styleType="simple"
+									className="!p-2 !text-black dark:!text-gray-500"
+								/>
+							</div>
+						</div>
+						<h2 className="mb-4 font-bold">BOAS-VINDAS, PROFESSOR!</h2>
+						<p>
+							Professor Online é a sua plataforma inovadora e centralizada para
+							otimizar a gestão de notas, turmas e muito mais. Com uma interface
+							intuitiva e ferramentas avançadas, você terá mais controle,
+							praticidade e eficiência no acompanhamento do desempenho dos
+							alunos. Simplifique sua rotina acadêmica e foque no que realmente
+							importa: ensinar e inspirar!
+						</p>
+					</Card>
 				</div>
-			</div>
+			</ScrollContainer>
 		</div>
 	);
 }

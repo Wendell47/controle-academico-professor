@@ -42,12 +42,12 @@ const MiniCalendar = () => {
 
 	return (
 		<Card className="w-full flex flex-col flex-1 font-sans ">
-			<div className="text-center font-bold mb-6 text-2xl">
+			<div className="text-center font-bold mb-6 text-xl">
 				{currentDate.toLocaleString("default", { month: "long" })} {year}
 			</div>
 			<div className="grid grid-cols-7 gap-1 flex-1">
 				{["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"].map((d, i) => (
-					<div key={i} className="text-center font-bold text-gray-500 py-1">
+					<div key={i} className="text-center font-bold text-gray-400 py-1">
 						{d}
 					</div>
 				))}
@@ -60,8 +60,8 @@ const MiniCalendar = () => {
 					return (
 						<div
 							key={i}
-							className={`h-10  flex items-center justify-center rounded-full
-								${item.current ? "text-neutral-900 font-semibold dark:text-gray-200" : "text-red-600 dark:text-red-800"}
+							className={`h-10  flex items-center justify-center rounded-full font-semibold
+								${item.current ? "text-neutral-900  dark:text-gray-200" : "text-red-600 dark:text-red-800"}
 								${isToday ? "bg-[#0d52b8] !text-white" : ""}
 							`}
 						>

@@ -5,9 +5,9 @@ type props = { classname?: string };
 export default function Header({ classname }: props) {
 	return (
 		<div
-			className={` dark:bg-transparent !flex-3/4 dark:border-none sticky top-0 ${classname}`}
+			className={` dark:bg-[#2b2d30]  dark:border-none bg-[#ecf1f5]  sticky top-0 ${classname}`}
 		>
-			<nav className=" py-4 flex items-center justify-between">
+			<nav className="  flex items-center justify-between">
 				<div>
 					<h2 className="font-bold text-1xl">SISTEMA DE CONTROLE ACADÊMICO </h2>
 					<span className="text-sm opacity-60">Sex,30 de Novembro de 2025</span>
