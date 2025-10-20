@@ -1,11 +1,12 @@
 import { Key, User } from "lucide-react";
 import type { ComponentProps, PropsWithChildren, ReactNode } from "react";
+import "../styles/inputsStyle.css";
 
 type Props = ComponentProps<"input"> &
 	PropsWithChildren & {
 		label?: string;
 		icon?: ReactNode;
-		inputStyle?: "primary" | "secondary";
+		inputStyle?: "input_primary" | "input_secondary" | "input_tertiary";
 	};
 
 export const Icons = ({ type }: ComponentProps<"input">) => {
@@ -31,24 +32,25 @@ export default function Input({
 	type,
 	icon,
 	className,
-	inputStyle = "primary",
+	inputStyle = "input_primary",
 	...rest
 }: Props) {
 	return (
-		<div className={`"flex flex-col gap-1 ${className}`}>
+		<div className={`" flex flex-col gap-1 ${className}`}>
 			{label && (
-				<label htmlFor={label} className="mb-2 text-sm font-medium text-white">
+				<label
+					htmlFor={label}
+					className="mb-2 text-sm font-bold text-[#9fa6b3] dark:text-gray-500"
+				>
 					{label}
 				</label>
 			)}
-			<div
-				className={`flex gap-2 p-3 items-center ${inputStyle === "primary" ? "bg-white dark:bg-transparent" : "bg-gray-100"} rounded-xl transition duration-300 ease-in-out focus-within:ring-blue-500/50 focus-within:ring-3`}
-			>
+			<div className={`input_base flex-1 ${inputStyle}`}>
 				<Icons type={type} />
 				{icon}
 				<input
 					id={label}
-					className=" placeholder:text-neutral-500 dark:placeholder:text-gray-500 text-neutral-700 border-gray-300 rounded-md w-full outline-none"
+					className="w-full"
 					placeholder={placeholder}
 					type={type}
 					{...rest}

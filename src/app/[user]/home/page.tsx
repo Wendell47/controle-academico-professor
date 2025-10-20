@@ -1,33 +1,28 @@
 import { Button } from "@/app/components/button";
-import MiniCalendar from "@/app/components/calendar";
 import Card from "@/app/components/card";
-import CardClasses from "@/app/components/cardClasses";
 import CardMenu from "@/app/components/cardMenu";
 import Header from "@/app/components/header";
 import ScrollContainer from "@/app/components/scrollContainer";
-import TeacherHomeInfo from "@/app/components/teacherHomeInfo";
+
 import "@/app/styles/animations.css";
 
 import {
 	BookUp,
 	BrainCircuit,
-	Calendar,
 	ChevronLeft,
 	ChevronRight,
-	EllipsisVertical,
 	LampFloor,
 	PersonStanding,
 	Presentation,
 	UserSearch,
 } from "lucide-react";
-import { Avatar, ScrollArea } from "radix-ui";
 
 export default function Home() {
 	return (
 		<div className="flex flex-1 flex-col gap-6  overflow-auto  px-4 max-w-5xl min-lg:max-w-6xl mx-auto max-h-[1200]">
 			<Header classname="max-lg:hidden pt-10" />
 			<ScrollContainer classname="flex-1 [&>div]:h-full" paddingViewport={true}>
-				<div className=" flex flex-wrap gap-4  h-full flex-1 [&>div]:flex-1/4 max-2xl:[&>div]:flex-[47%]">
+				<div className=" flex flex-wrap gap-4  h-full flex-1 [&>div]:flex-1/4 max-xl:[&>div]:flex-[46%]">
 					<CardMenu
 						title="Menu de turma "
 						icon={<PersonStanding size={40} />}
@@ -61,12 +56,12 @@ export default function Home() {
 							<div className="flex gap-4 border border-gray-100 dark:border-[#3f444b] rounded-2xl p-1 [&>svg]:cursor-pointer">
 								<Button
 									icon={<ChevronLeft />}
-									styleType="simple"
+									styleType="button_simple"
 									className="!p-2 !text-black dark:!text-gray-500"
 								/>
 								<Button
 									icon={<ChevronRight />}
-									styleType="simple"
+									styleType="button_simple"
 									className="!p-2 !text-black dark:!text-gray-500"
 								/>
 							</div>

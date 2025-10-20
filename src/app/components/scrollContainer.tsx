@@ -15,9 +15,11 @@ export default function ScrollContainer({
 	pt,
 }: props) {
 	return (
-		<ScrollArea.Root className={`overflow-y-hidden flex flex-col ${classname}`}>
+		<ScrollArea.Root
+			className={`overflow-hidden  flex  mi-w-full flex-col ${classname}`}
+		>
 			<ScrollArea.Viewport
-				className={`h-full w-full [&>div]:h-full ${paddingViewport ? "py-4 " : ""} ${pt && "pt-" + pt}`}
+				className={`h-full min-w-full  [&>div]:min-w-full  [&>div]:h-full [&>div]:!inline-table   ${paddingViewport ? "py-4 " : ""} ${pt && "pt-" + pt}`}
 			>
 				{children}
 			</ScrollArea.Viewport>

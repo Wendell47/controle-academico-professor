@@ -13,9 +13,9 @@ export default function HeaderMobile({ classname }: props) {
 		<div
 			className={`min-lg:hidden  z-20 bg-white dark:bg-[#36393d] backdrop-blur-3xl border-b border-gray-100 dark:border-[#2b2d30] sticky top-0 ${classname}`}
 		>
-			<nav className=" py-4 flex items-center justify-between w-full">
+			<nav className=" py-4 px-4 flex gap-2 items-center justify-between w-full">
 				<Button
-					styleType="simple"
+					styleType="button_secondary"
 					icon={
 						<Menu
 							className="dark:text-gray-500 text-gray-600"
@@ -31,10 +31,10 @@ export default function HeaderMobile({ classname }: props) {
 					icon={<Search />}
 					placeholder="Pesquisar"
 					className="w-full"
-					inputStyle="primary"
+					inputStyle="input_tertiary"
 				/>
 				<Button
-					styleType="simple"
+					styleType="button_secondary"
 					icon={
 						<ArrowLeftFromLine
 							className="dark:text-gray-500 text-gray-600"

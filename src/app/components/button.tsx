@@ -5,7 +5,7 @@ import "@/app/styles/buttonsStyle.css";
 type Props = ComponentProps<"button"> & {
 	title?: string;
 	icon?: ReactNode;
-	styleType?: "primary" | "simple";
+	styleType?: "button_primary" | "button_secondary" | "button_simple";
 };
 type linkProps = PropsWithChildren & {
 	link: string;
@@ -29,13 +29,13 @@ const LinkButton = ({ link, title, children, className, icon }: linkProps) => {
 function Button({
 	title,
 	icon,
-	styleType = "primary",
+	styleType = "button_primary",
 	className,
 	...rest
 }: Props) {
 	return (
 		<button
-			className={`base ${styleType} ${className}`}
+			className={`base_button ${styleType} ${className}`}
 			type="button"
 			{...rest}
 		>

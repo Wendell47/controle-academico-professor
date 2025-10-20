@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+.input_base {
+	@apply flex gap-2 p-3 items-center rounded-xl transition duration-300 ease-in-out focus-within:ring-blue-500/50 focus-within:ring-3;
+}
+
+.input_transparent {
+	@apply !bg-transparent;
+}
+
+.input_primary {
+	@apply bg-white dark:bg-gray-600;
+}
+.input_secondary {
+	@apply bg-white dark:bg-[#36393d];
+}
+
+.input_tertiary {
+	@apply bg-gray-100 dark:bg-[#3f4348];
+}
+
+.input_input {
+	@apply text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400 text-neutral-700 border-0 bg-transparent w-full outline-none;
+}
