@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import Card from "./card";
+import { Button } from "./button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const MiniCalendar = () => {
 	const today = new Date();
@@ -9,42 +11,56 @@ const MiniCalendar = () => {
 	const year = currentDate.getFullYear();
 	const month = currentDate.getMonth();
 
-	// Get first day of the month (0=Sunday)
+	const goToPreviousMonth = () => {
+		setCurrentDate(new Date(year, month - 1, 1));
+	};
+
+	const goToNextMonth = () => {
+		setCurrentDate(new Date(year, month + 1, 1));
+	};
+
 	const firstDay = new Date(year, month, 1).getDay();
-	// Get number of days in current month
 	const daysInMonth = new Date(year, month + 1, 0).getDate();
-	// Get number of days in previous month
 	const prevMonthDays = new Date(year, month, 0).getDate();
 
-	// Prepare days array
 	const days: { day: number; current: boolean }[] = [];
 
-	// Fill days from previous month
 	for (let i = firstDay - 1; i >= 0; i--) {
 		days.push({ day: prevMonthDays - i, current: false });
 	}
 
-	// Fill days from current month
 	for (let i = 1; i <= daysInMonth; i++) {
 		days.push({ day: i, current: true });
 	}
 
-	// Fill days from next month to complete the grid (total cells should be multiple of 7)
 	const totalCells = Math.ceil(days.length / 7) * 7;
 	for (let i = 1; days.length < totalCells; i++) {
 		days.push({ day: i, current: false });
 	}
 
-	// Get today's day, month, year
 	const todayDay = today.getDate();
 	const todayMonth = today.getMonth();
 	const todayYear = today.getFullYear();
 
 	return (
-		<Card className="w-full flex flex-col flex-1 font-sans ">
-			<div className="text-center font-bold mb-6 text-xl">
-				{currentDate.toLocaleString("default", { month: "long" })} {year}
+		<Card className="w-full flex flex-col flex-1 font-sans">
+			<div className="flex justify-between items-center mb-6 px-2">
+				<Button
+					onClick={goToPreviousMonth}
+					styleType="button_secondary"
+					icon={<ChevronLeft />}
+				/>
+
+				<div className="text-center font-bold text-xl">
+					{currentDate.toLocaleString("default", { month: "long" })} {year}
+				</div>
+				<Button
+					onClick={goToNextMonth}
+					styleType="button_secondary"
+					icon={<ChevronRight />}
+				/>
 			</div>
+
 			<div className="grid grid-cols-7 gap-1 flex-1">
 				{["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"].map((d, i) => (
 					<div key={i} className="text-center font-bold text-gray-400 py-1">
@@ -60,10 +76,10 @@ const MiniCalendar = () => {
 					return (
 						<div
 							key={i}
-							className={`h-10  flex items-center justify-center rounded-full font-semibold
-								${item.current ? "text-neutral-900  dark:text-gray-200" : "text-red-600 dark:text-red-800"}
-								${isToday ? "bg-[#0d52b8] !text-white" : ""}
-							`}
+							className={`h-10 flex items-center justify-center rounded-full font-semibold
+                ${item.current ? "text-neutral-900 dark:text-gray-200" : "text-red-600 dark:text-red-800"}
+                ${isToday ? "bg-[#0d52b8] !text-white" : ""}
+              `}
 						>
 							{item.day}
 						</div>

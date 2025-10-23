@@ -18,7 +18,10 @@
 .input_tertiary {
 	@apply bg-gray-100 dark:bg-[#3f4348];
 }
+.input_simple {
+	@apply bg-gray-100 text-gray-700 placeholder:text-gray-500;
+}
 
 .input_input {
-	@apply text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400 text-neutral-700 border-0 bg-transparent w-full outline-none;
+	@apply text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400 text-neutral-700 border-0 bg-transparent  outline-none;
 }

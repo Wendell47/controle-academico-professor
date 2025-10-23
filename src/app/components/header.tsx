@@ -17,7 +17,7 @@ export default function Header({ classname }: props) {
 					icon={<Search />}
 					placeholder="Pesquisar"
 					className="min-w-1/3 max-md:hidden transparent"
-					inputStyle="input_tertiary"
+					inputStyle="input_secondary"
 				/>
 			</nav>
 		</div>

@@ -22,6 +22,7 @@ export default function AsideMenu({ ...rest }: props) {
 			items: [
 				{
 					title: "Visão Geral",
+					Link: "/teacher/home",
 					icon: <LayoutDashboard size={iconSize} className="opacity-80" />,
 				},
 				{
@@ -83,8 +84,8 @@ export default function AsideMenu({ ...rest }: props) {
 
 					<Button
 						icon={<PanelLeftDashed size={20} />}
-						styleType="simple"
-						className="max-lg:hidden"
+						styleType="button_transparent"
+						className="max-lg:!hidden"
 						onClick={() => toggleMainMenu()}
 					/>
 				</div>
@@ -96,7 +97,7 @@ export default function AsideMenu({ ...rest }: props) {
 							{group.items.map((item) => (
 								<li key={item.title}>
 									<LinkButton
-										link="#"
+										link={item.Link || "#"}
 										title={item.title}
 										icon={item.icon}
 										className={`transition ${!mainMenu && "[&_span]:hidden [&_span]:opacity-0"}`}

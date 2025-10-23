@@ -10,7 +10,7 @@ export default function Layout({ children }: props) {
 			<div className="flex  w-screen max-lg:flex-col ">
 				<HeaderMobile />
 				<AsideMenu />
-				<div className="flex flex-1 flex-col  px-4 w-full h-full overflow-hidden max-w-5xl min-lg:max-w-6xl mx-auto max-h-[1200]">
+				<div className="flex flex-1 flex-col  px-4 w-full h-full  overflow-hidden max-w-5xl min-lg:max-w-6xl mx-auto">
 					{children}
 				</div>
 

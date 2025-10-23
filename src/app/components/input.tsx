@@ -6,7 +6,11 @@ type Props = ComponentProps<"input"> &
 	PropsWithChildren & {
 		label?: string;
 		icon?: ReactNode;
-		inputStyle?: "input_primary" | "input_secondary" | "input_tertiary";
+		inputStyle?:
+			| "input_primary"
+			| "input_secondary"
+			| "input_tertiary"
+			| "input_simple";
 	};
 
 export const Icons = ({ type }: ComponentProps<"input">) => {
@@ -36,11 +40,11 @@ export default function Input({
 	...rest
 }: Props) {
 	return (
-		<div className={`" flex flex-col gap-1 ${className}`}>
+		<div className={`flex flex-col gap-1 ${className}`}>
 			{label && (
 				<label
 					htmlFor={label}
-					className="mb-2 text-sm font-bold text-[#9fa6b3] dark:text-gray-500"
+					className={`mb-2 text-sm font-bold text-[#9fa6b3] dark:text-gray-500 ${inputStyle === "input_simple" ? "!text-white/80" : ""}`}
 				>
 					{label}
 				</label>

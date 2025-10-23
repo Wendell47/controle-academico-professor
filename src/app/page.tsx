@@ -1,11 +1,14 @@
+"use client";
 import Image from "next/image";
 import Footer from "./components/footer";
 import Input from "./components/input";
 import Container from "./components/Container";
 import Link from "next/link";
 import { Button } from "./components/button";
-
+import { useRouter } from "next/navigation";
 export default function Home() {
+	const router = useRouter();
+
 	return (
 		<main className="flex flex-auto  flex-col bg-[url('/bg-login.webp')] bg-cover bg-no-repeat bg-center">
 			<Container className="flex-1 flex items-center">
@@ -31,9 +34,15 @@ export default function Home() {
 								<Input
 									label="Código Identificador"
 									placeholder="1234"
+									inputStyle="input_simple"
 									type="text"
 								/>
-								<Input label="Senha" placeholder="•••••••" type="password" />
+								<Input
+									label="Senha"
+									placeholder="•••••••"
+									type="password"
+									inputStyle="input_simple"
+								/>
 								<div className="flex justify-between">
 									<div className="flex gap-3">
 										<input
@@ -50,7 +59,11 @@ export default function Home() {
 									</Link>
 								</div>
 							</div>
-							<Button title="Entrar" />
+							<Button
+								title="Entrar"
+								className="w-full justify-center"
+								onClick={() => router.push("/teacher/home", { scroll: false })}
+							/>
 						</form>
 					</div>
 				</div>

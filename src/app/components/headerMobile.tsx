@@ -31,7 +31,7 @@ export default function HeaderMobile({ classname }: props) {
 					icon={<Search />}
 					placeholder="Pesquisar"
 					className="w-full"
-					inputStyle="input_tertiary"
+					inputStyle="input_secondary"
 				/>
 				<Button
 					styleType="button_secondary"

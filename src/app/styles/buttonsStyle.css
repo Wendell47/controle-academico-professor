@@ -1,19 +1,29 @@
 @import "tailwindcss";
 
 .base_button {
-	@apply flex  gap-2 text-white text-nowrap dark:text-gray-400 font-bold  rounded-xl transition duration-300 ease-in-out cursor-pointer focus:ring-3 ring-blue-500/50;
+	@apply flex  gap-2  text-nowrap font-bold text-white rounded-xl transition duration-300 ease-in-out cursor-pointer;
 }
-
+.active {
+	@apply bg-[#ebf2fc] dark:!bg-[#bdc5d3] [&_svg]:!text-[#0d52b8] !text-black;
+}
 .button_primary {
 	@apply bg-blue-500 py-3 px-4 hover:bg-blue-600 shadow-xl drop-shadow-blue-900 focus:outline-none focus:ring-3 focus:ring-blue-500/50;
+}
+
+.button_alert {
+	@apply bg-red-700 py-3 px-4 hover:bg-red-800 shadow-xl  focus:outline-none focus:ring-3 focus:ring-red-500/50;
 }
 
 .button_simple {
 	@apply dark:hover:bg-white/10  hover:bg-[#dadce1] dark:hover:bg-black/10 p-3 text-[#454d58] dark:text-[#99a0a9] aria-selected:bg-[#ebf2fc] dark:aria-selected:bg-[#bdc5d3] aria-selected:[&>svg]:text-[#0d52b8] dark:aria-selected:[&>svg]:text-blue-400 dark:aria-selected:text-white disabled:text-[#9da3ad] dark:disabled:text-[#dadce1];
 }
 
+.button_transparent {
+	@apply dark:hover:bg-white/10  hover:bg-white/30 dark:hover:bg-black/10 p-3 text-white/80  aria-selected:bg-[#ebf2fc] dark:aria-selected:bg-[#bdc5d3] aria-selected:[&>svg]:text-[#0d52b8] dark:aria-selected:[&>svg]:text-blue-400 dark:aria-selected:text-white disabled:text-[#9da3ad] dark:disabled:text-[#dadce1];
+}
+
 .button_secondary {
-	@apply bg-white dark:bg-[#3d4249] py-3 px-4 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-3 focus:ring-gray-500/50 disabled:opacity-70 aria-selected:[&>svg]:text-blue-400 aria-selected:text-white;
+	@apply bg-gray-100 text-gray-700 dark:text-white dark:bg-[#3d4249] placeholder:text-neutral-800 py-3 px-4 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-3 focus:ring-gray-500/50 disabled:opacity-70 aria-selected:[&>svg]:text-blue-400 aria-selected:text-white;
 }
 
 .button_input {

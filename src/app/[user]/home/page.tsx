@@ -22,7 +22,7 @@ export default function Home() {
 		<div className="flex flex-1 flex-col gap-6  overflow-auto  px-4 max-w-5xl min-lg:max-w-6xl mx-auto max-h-[1200]">
 			<Header classname="max-lg:hidden pt-10" />
 			<ScrollContainer classname="flex-1 [&>div]:h-full" paddingViewport={true}>
-				<div className=" flex flex-wrap gap-4  h-full flex-1 [&>div]:flex-1/4 max-xl:[&>div]:flex-[46%]">
+				<div className=" flex flex-wrap gap-4  h-full flex-1 [&>a]:flex-1/4 max-xl:[&>div]:flex-[46%]">
 					<CardMenu
 						title="Menu de turma "
 						icon={<PersonStanding size={40} />}
